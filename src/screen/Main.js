@@ -9,7 +9,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { inCrease, deCrease } from '../redux';
+import { inCrease, deCrease } from '../redux/counter';
 
 const Main = () => {
 
