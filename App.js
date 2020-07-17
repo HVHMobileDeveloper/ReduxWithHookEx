@@ -9,13 +9,13 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Provider } from 'react-redux';
-import Main from './src/screen/Main';
 import store from './src/redux/store';
+import Router from './src/screen/Router/ApplicationNavigation';
 
 const App =()=> {
   return (
     <Provider store={store}>
-      <Main/>
+      <Router/>
     </Provider>
   )
 }

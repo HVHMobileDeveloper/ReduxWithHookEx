@@ -1,6 +1,7 @@
-const { createStore } = require("redux");
-const { default: Reducer } = require(".");
+import RootReducer from ".";
 
-const store = createStore(Reducer)
+const { createStore } = require("redux");
+
+const store = createStore(RootReducer)
 
 export default store
