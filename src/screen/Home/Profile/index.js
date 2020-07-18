@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 const Profile = ({ navigation }) => {
 
-    const value = useSelector(state => state)
+    const value = useSelector(state => state.ReducerProfile)
 
     return (
         <View style={{ backgroundColor: 'yellow', flex: 1, }}>
