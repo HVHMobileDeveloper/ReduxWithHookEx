@@ -4,12 +4,13 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { NAVIGATION_SCREEN } from '../Router/ApplicationNavigation';
 import { useDispatch } from 'react-redux';
 import { saveProfileToRedux } from '../../redux/Profile';
+import { NavigationProp } from '@react-navigation/native';
 
 export interface Props {
-    navigation : any
+    navigation : NavigationProp<any, any>
 }
 
-const LoginScreen : React.FC<Props> = (props) => {
+const LoginScreen : React.FC<Props> = ({navigation}) => {
 
     const user = {
         email: 'hiephuynh200499@gmail.com',
@@ -17,11 +18,12 @@ const LoginScreen : React.FC<Props> = (props) => {
     }
 
     const dispatch = useDispatch()
-    const saveProfile = () => dispatch(saveProfileToRedux(user))
+    const saveProfile = () => dispatch(saveProfileToRedux(user));
+    const navigateToHome = () => navigation.navigate(NAVIGATION_SCREEN.HOME);
 
-    const onSubmit = () =>{
-        saveProfile();
-        props.navigation.navigate(NAVIGATION_SCREEN.HOME);
+    const onSubmit = async () =>{
+        await saveProfile();
+        navigateToHome();   
     }
 
     return (

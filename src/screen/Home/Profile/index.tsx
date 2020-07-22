@@ -3,15 +3,16 @@ import React from 'react';
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useSelector, DefaultRootState } from 'react-redux';
+import { NavigationProp } from '@react-navigation/native';
 
 export interface Props {
-  navigation: any;
+  navigation: NavigationProp<any, any>;
 }
 
 const Profile : React.FC<Props> = ({navigation}) => {
 
-    const [getEmail, setEmail] = useState("email")
-    const [getPassword, setPass] = useState("password")
+    const [getEmail, setEmail] = useState<string>('')
+    const [getPassword, setPass] = useState<string>('')
 
     const value = useSelector((state: any) => state.ReducerProfile);
 
