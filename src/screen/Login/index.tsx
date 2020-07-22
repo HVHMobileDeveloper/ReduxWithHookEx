@@ -1,9 +1,9 @@
 
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useReducer } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { NAVIGATION_SCREEN } from '../Router/ApplicationNavigation';
 import { useDispatch } from 'react-redux';
-import { saveProfileToRedux } from '../../redux/Profile';
+import ReducerProfile, { saveProfileToRedux } from '../../redux/Profile';
 import { NavigationProp } from '@react-navigation/native';
 
 export interface Props {
