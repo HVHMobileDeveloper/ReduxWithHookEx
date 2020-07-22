@@ -5,7 +5,11 @@ import { NAVIGATION_SCREEN } from '../Router/ApplicationNavigation';
 import { useDispatch } from 'react-redux';
 import { saveProfileToRedux } from '../../redux/Profile';
 
-const LoginScreen = ({ navigation}) => {
+export interface Props {
+    navigation : any
+}
+
+const LoginScreen : React.FC<Props> = (props) => {
 
     const user = {
         email: 'hiephuynh200499@gmail.com',
@@ -17,7 +21,7 @@ const LoginScreen = ({ navigation}) => {
 
     const onSubmit = () =>{
         saveProfile();
-        navigation.navigate(NAVIGATION_SCREEN.HOME);
+        props.navigation.navigate(NAVIGATION_SCREEN.HOME);
     }
 
     return (

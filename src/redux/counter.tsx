@@ -24,7 +24,7 @@ export const deCrease = (value = '') => {
 // reducer
 
 const initialState = 0
-const ReducerCounter = (state = initialState, action) => {
+const ReducerCounter = (state = initialState, action: any) => {
     switch (action.type) {
         case INCREASE:
             state += 1

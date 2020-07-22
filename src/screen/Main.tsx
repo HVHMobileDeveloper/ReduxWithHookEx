@@ -6,7 +6,8 @@
  * @flow strict-local
  */
 
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React from 'react';
+import {useState, useEffect, useMemo, useCallback} from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { inCrease, deCrease } from '../redux/counter';
@@ -46,13 +47,13 @@ const Main = () => {
     )
 }
 
-export const Button = ({title, onPress}) => {
+export const Button : React.FC<{title: String, onPress? : () => void}> = (buttonProps) => {
     useEffect(() =>{
         console.log("btn click")
     })
     return(
-        <TouchableOpacity onPress={onPress}>
-            <Text>{title}</Text>
+        <TouchableOpacity onPress={buttonProps.onPress}>
+            <Text>{buttonProps.title}</Text>
         </TouchableOpacity>
     )
 }

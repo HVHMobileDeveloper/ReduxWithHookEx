@@ -23,7 +23,7 @@ const initState = {
     email:'',
     password: '',
 }
-const ReducerProfile = (state = initState, action) => {
+const ReducerProfile = (state = initState, action : any) => {
     // console.log(`Action: ${JSON.stringify(action)} - state:${JSON.stringify(state)}`)
     switch (action.type) {
         case SAVE_PROFILE:

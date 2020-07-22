@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-const DashBoard = ({ navigation}) => {
+const DashBoard : React.FC<{navigation: any}> = ({ navigation}) => {
 
 
     return (
